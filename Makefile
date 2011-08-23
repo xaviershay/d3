@@ -201,5 +201,11 @@ d3.js d3%.js: Makefile
 	cat $(filter %.js,$^) > $@
 	@chmod a-w $@
 
+d3.all.min.js: Makefile
+	@rm -f $@
+	echo ";" > sc
+	cat d3.min.js sc d3.csv.min.js sc d3.layout.min.js sc d3.behavior.min.js sc d3.geo.min.js sc d3.chart.min.js sc d3.geom.min.js sc d3.time.min.js sc > $@
+	rm sc
+
 clean:
 	rm -f d3*.js
